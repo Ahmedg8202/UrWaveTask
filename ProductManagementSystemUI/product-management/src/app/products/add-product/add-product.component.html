@@ -1,0 +1,68 @@
+<div class="add-product-container">
+  <h2>Add New Product</h2>
+  
+  <p-card>
+    <form (ngSubmit)="addProduct()" #productForm="ngForm">
+      
+      <div class="p-fluid">
+        <!-- Product Name -->
+        <div class="p-field">
+          <label for="name">Product Name</label>
+          <input
+            pInputText
+            id="name"
+            type="text"
+            [(ngModel)]="product.name"
+            name="name"
+            required
+            minlength="3"
+            #name="ngModel"
+            class="form-control"
+          />
+          <p-message *ngIf="name.invalid && name.touched" severity="error" text="Name is required and must be at least 3 characters long." class="error-message"></p-message>
+        </div>
+
+        <!-- Product Description -->
+        <div class="p-field">
+          <label for="description">Product Description</label>
+          <input
+            pInputText
+            id="description"
+            type="text"
+            [(ngModel)]="product.description"
+            name="description"
+            required
+            minlength="5"
+            #description="ngModel"
+            class="form-control"
+          />
+          <p-message *ngIf="description.invalid && description.touched" severity="error" text="Description is required and must be at least 5 characters long." class="error-message"></p-message>
+        </div>
+
+        <!-- Product Price -->
+        <div class="p-field">
+          <label for="price">Product Price</label>
+          <input
+            pInputText
+            id="price"
+            type="number"
+            [(ngModel)]="product.price"
+            name="price"
+            required
+            min="1"
+            #price="ngModel"
+            class="form-control"
+          />
+          <p-message *ngIf="price.invalid && price.touched" severity="error" text="Price is required and must be greater than 0." class="error-message"></p-message>
+        </div>
+      </div>
+
+      <div class="p-d-flex p-jc-between">
+        <button pButton type="submit" label="Add Product" [disabled]="productForm.invalid" [loading]="loading" class="submit-btn"></button>
+      </div>
+      <div *ngIf="errorMessage" class="p-mt-3 p-text-center">
+        <p-message severity="error" [text]="errorMessage"></p-message>
+      </div>
+    </form>
+  </p-card>
+</div>

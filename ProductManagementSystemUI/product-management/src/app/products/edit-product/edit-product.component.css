@@ -1,0 +1,70 @@
+
+.edit-product-container {
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+  }
+  
+  .p-card {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+
+  .p-inputtext-lg {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+
+  .p-inputtext-lg:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+
+  .p-field label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+
+  .p-message {
+    margin-top: 5px;
+    color: #e74c3c;
+    font-size: 14px;
+  }
+  
+
+  .p-button-lg {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+
+  .p-d-flex.p-jc-between {
+    justify-content: center;
+  }
+
+  .p-field {
+    margin-bottom: 15px;
+  }
+
+  .p-fluid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  

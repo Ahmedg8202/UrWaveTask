@@ -1,0 +1,72 @@
+<div class="edit-product-container">
+  <h2>Edit Product</h2>
+  
+  <p-card class="p-shadow-2">
+    <form (ngSubmit)="editProduct()" #productForm="ngForm">
+      
+      <div class="p-fluid">
+        <!-- Product Name -->
+        <div class="p-field">
+          <label for="name">Product Name</label>
+          <input
+            pInputText
+            id="name"
+            type="text"
+            [(ngModel)]="product.name"
+            name="name"
+            required
+            minlength="3"
+            #name="ngModel"
+            [ngClass]="{'p-invalid': name.invalid && name.touched}"
+            class="p-inputtext-lg" />
+          <p-message *ngIf="name.invalid && name.touched" severity="error" text="Name is required and must be at least 3 characters long."></p-message>
+        </div>
+
+        <!-- Product Description -->
+        <div class="p-field">
+          <label for="description">Product Description</label>
+          <input
+            pInputText
+            id="description"
+            type="text"
+            [(ngModel)]="product.description"
+            name="description"
+            required
+            minlength="5"
+            #description="ngModel"
+            [ngClass]="{'p-invalid': description.invalid && description.touched}"
+            class="p-inputtext-lg" />
+          <p-message *ngIf="description.invalid && description.touched" severity="error" text="Description is required and must be at least 5 characters long."></p-message>
+        </div>
+
+        <!-- Product Price -->
+        <div class="p-field">
+          <label for="price">Product Price</label>
+          <input
+            pInputText
+            id="price"
+            type="number"
+            [(ngModel)]="product.price"
+            name="price"
+            required
+            min="1"
+            #price="ngModel"
+            [ngClass]="{'p-invalid': price.invalid && price.touched}"
+            class="p-inputtext-lg" />
+          <p-message *ngIf="price.invalid && price.touched" severity="error" text="Price is required and must be greater than 0."></p-message>
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="p-d-flex p-jc-between p-mt-3">
+        <button pButton type="submit" label="Update Product" [disabled]="productForm.invalid || loading" [loading]="loading" class="p-button-lg p-button-primary"></button>
+      </div>
+
+      <!-- Error Message -->
+      <div *ngIf="errorMessage" class="p-mt-3 p-text-center">
+        <p-message severity="error" [text]="errorMessage"></p-message>
+      </div>
+      
+    </form>
+  </p-card>
+</div>

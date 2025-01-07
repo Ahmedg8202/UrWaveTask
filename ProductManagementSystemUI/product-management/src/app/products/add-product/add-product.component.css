@@ -1,0 +1,40 @@
+
+.add-product-container {
+max-width: 600px;
+margin: 0 auto;
+padding: 20px;
+}
+
+.p-field {
+margin-bottom: 15px;
+}
+
+.form-control {
+width: 100%;
+padding: 10px;
+margin-top: 5px;
+font-size: 14px;
+}
+
+.error-message {
+margin-top: 5px;
+font-size: 12px;
+}
+
+.submit-btn {
+width: 100%;
+padding: 10px;
+font-size: 16px;
+}
+
+.submit-btn:disabled {
+opacity: 0.6;
+}
+
+.p-d-flex {
+display: flex;
+}
+
+.p-jc-between {
+justify-content: space-between;
+}

@@ -1,0 +1,15 @@
+.products-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    align-items: center;
+    justify-content: center; 
+}
+
+.add-new{
+    margin: 20px;
+}
+
+.btn-right {
+    float: right;
+  }
